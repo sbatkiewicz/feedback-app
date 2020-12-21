@@ -55,13 +55,13 @@ module.exports = (app) => {
 
     app.post("/api/surveys", requireLogin, requireCredits, async (req, res) => {
         const { title, subject, body, recipients} = req.body;
-        console.log("A campaign was just sent by user: " + req.body.id)
+        console.log("A survey was just sent by user: " + req.user.id)
         const survey = new Survey({
             title,//since variables are same name, this is the same as title: title
             subject,
             body,
             recipients: recipients.split(",").map(email => ({email: email.trim() })),
-            _user: req.body.id,
+            _user: req.user.id,
             dateSent: Date.now() 
         });
 
