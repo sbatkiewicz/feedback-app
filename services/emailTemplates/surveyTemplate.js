@@ -3,7 +3,7 @@ const keys = require("../../config/keys");
 module.exports = (survey) => {
   return `
     <html>
-    <body>
+    <body style="color:white; background:#ea454b center">
       <div style="text-align: center">
         <h3>I'd like your feedback!</h3>
         <p>Please answer the following question(s):</p>

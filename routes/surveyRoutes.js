@@ -11,12 +11,12 @@ const Survey = mongoose.model("surveys");// Slightly different approach since we
 
 module.exports = (app) => {
 
-  app.get("/api/surveys", requireLogin, async (req, res) => {
-    const surveys = await Survey.find({ _user: req.user.id })
+    app.get("/api/surveys", requireLogin, async (req, res) => {
+      const surveys = await Survey.find({ _user: req.user.id })
       .select({recipients: false, });
 
-    res.send(surveys);
-  });
+      res.send(surveys);
+    });
 
 
     app.get("/api/surveys/:surveyId/:choice", (req, res) => {
@@ -58,7 +58,6 @@ module.exports = (app) => {
 
     app.post("/api/surveys", requireLogin, requireCredits, async (req, res) => {
         const { title, subject, body, recipients} = req.body;
-        console.log("A survey was just sent by user: " + req.user.id)
         const survey = new Survey({
             title,//since variables are same name, this is the same as title: title
             subject,
