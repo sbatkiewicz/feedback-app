@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const _ = require("lodash");
-const { Path } = require("path-parser")
+const { Path } = require("path-parser");
 const { URL } = require("url");
 const requireLogin = require("../middlewares/requireLogin");
 const requireCredits = require("../middlewares/requireCredits");
@@ -20,7 +20,10 @@ module.exports = (app) => {
 
 
     app.get("/api/surveys/:surveyId/:choice", (req, res) => {
-      res.send("Thanks for your feedback!");
+      res.send(`
+          <h1 style="text-align:center;margin-top:50px;color:#ea454b; font-size: 60px;">Emaily</h1>
+          <h2 style="text-align:center;margin-top:10px;font-size: 36px;">Thanks for your feedback!</h2> 
+        `);
     });
 
     app.post("/api/surveys/webhooks", (req, res) => {

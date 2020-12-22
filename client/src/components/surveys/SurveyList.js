@@ -10,7 +10,6 @@ class SurveyList extends Component {
   }
 
   renderSurveys(){
-    console.log("We made it into renderSurveys function.")
     return this.props.surveys.map(survey => {  
       return(
         <div className="card grey lighten-3" key={survey._id}>

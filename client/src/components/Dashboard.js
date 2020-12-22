@@ -5,7 +5,6 @@ import SurveyList from "./surveys/SurveyList";
 const Dashboard = () => {
   return(
     <div>
-      Test SurveyList
       <SurveyList />
 
       <div className="fixed-action-btn">
